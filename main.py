@@ -42,7 +42,7 @@ def create_tarball(
 ):
     logging.info(f"Creating tarball for {parent}/{target} -> {target_tarball_path}")
     _, stdout, _ = ssh_client.exec_command(
-        f"tar -cJvf {target_tarball_path} -C {parent} {target}"
+        f"tar -cf {target_tarball_path} -C {parent} {target}"
     )
     logging.info("Waiting for tarball to be created...")
     exit_status = stdout.channel.recv_exit_status()
@@ -60,7 +60,7 @@ def copy_tarball(
     destination: Path,
     host_name: str,
 ):
-    target_file_name = f"{host_name}_{target}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.tar.xz"
+    target_file_name = f"{host_name}_{target}_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.tar"
     full_dest_path = destination / target_file_name
     logging.info(
         f"Copying tarball from remote:{parent}/{target} -> local:{full_dest_path}"
