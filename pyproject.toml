@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "backup-manager"
+version = "0.1.0"
+description = ""
+authors = ["thearyadev <personal@aryankothari.dev>"]
+readme = "README.md"
+packages = [{include = "backup_manager"}]
+
+[tool.poetry.dependencies]
+python = "3.11"
+rich = "^13.4.2"
+paramiko = "^3.2.0"
+pyaml = "^23.7.0"
+pydantic = "^2.0.2"
+black = "^23.3.0"
+isort = "^5.12.0"
+jupyter = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

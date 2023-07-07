@@ -1,0 +1,30 @@
+- ssh_target:
+    name: server
+    hostname: 192.168.50.190
+    username: <username>
+    password: <password>
+    port: 22
+    directories:
+      - parent: /dir/one
+        child_targets:
+        - child_one
+        - child_two
+      - parent: /dir/two
+        child_targets:
+        - child_three
+        - child_four
+- ssh_target:
+    name: server
+    hostname: 192.168.50.190
+    username: <username>
+    password: <password>
+    port: 22
+    directories:
+      - parent: /dir/one
+        child_targets:
+        - child_one
+        - child_two
+      - parent: /dir/two
+        child_targets:
+        - child_three
+        - child_four
